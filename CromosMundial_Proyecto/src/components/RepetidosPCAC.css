@@ -1,0 +1,116 @@
+.repetidos-pcac {
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(20,15,30,0.95), rgba(35,20,50,0.95));
+  border: 1px solid rgba(255,100,100,0.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,100,100,0.1);
+}
+
+.repetidos-pcac__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(170,21,27,0.4), rgba(100,10,15,0.3));
+  border-bottom: 1px solid rgba(255,100,100,0.15);
+}
+
+.repetidos-pcac__icono {
+  font-size: 2rem;
+}
+
+.repetidos-pcac__titulo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 0.15rem;
+}
+
+.repetidos-pcac__desc {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+.repetidos-pcac__badge {
+  margin-left: auto;
+  background: rgba(170,21,27,0.7);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,100,100,0.5);
+  flex-shrink: 0;
+}
+
+.repetidos-pcac__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+.repetidos-pcac__item {
+  position: relative;
+  width: 88px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px rgba(255,80,80,0.5), 0 6px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+
+.repetidos-pcac__item:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.repetidos-pcac__cantidad {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 4;
+  background: rgba(170,21,27,0.9);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,100,100,0.4);
+}
+
+.repetidos-pcac__imagen {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.repetidos-pcac__info {
+  background: rgba(0,0,0,0.8);
+  padding: 4px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.repetidos-pcac__num {
+  font-size: 0.55rem;
+  color: rgba(255,80,80,0.8);
+  font-weight: 700;
+}
+
+.repetidos-pcac__nombre {
+  font-size: 0.58rem;
+  color: #fff;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.2;
+}

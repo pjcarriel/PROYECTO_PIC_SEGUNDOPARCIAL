@@ -1,0 +1,138 @@
+.cromo-pcac {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 120px;
+  aspect-ratio: 2/3;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  transition: transform 0.25s, box-shadow 0.25s;
+  flex-shrink: 0;
+}
+
+.cromo-pcac--mini {
+  width: 90px;
+}
+
+.cromo-pcac--pegado {
+  box-shadow: 0 0 0 2px rgba(255,209,0,0.6), 0 8px 24px rgba(0,0,0,0.5);
+  animation: cromoPegar 0.4s ease-out;
+}
+
+.cromo-pcac--pegado:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 0 0 2px #FFD100, 0 16px 36px rgba(0,0,0,0.6);
+  z-index: 5;
+}
+
+.cromo-pcac--vacio {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  opacity: 0.45;
+}
+
+@keyframes cromoPegar {
+  0%   { transform: scale(0.6) rotate(-5deg); opacity: 0; }
+  60%  { transform: scale(1.1) rotate(1deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.cromo-pcac__numero {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  background: rgba(0,0,0,0.45);
+  padding: 1px 5px;
+  border-radius: 4px;
+  z-index: 3;
+  letter-spacing: 0.5px;
+}
+
+.cromo-pcac__imagen-wrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+
+.cromo-pcac__imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cromo-pcac__sombra {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cromo-pcac__interrogacion {
+  font-size: 2.5rem;
+  color: rgba(255,255,255,0.15);
+  font-weight: 900;
+}
+
+.cromo-pcac--mini .cromo-pcac__interrogacion {
+  font-size: 1.8rem;
+}
+
+.cromo-pcac__brillo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.25) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(255,255,255,0.08) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cromo-pcac__info {
+  padding: 5px 6px 6px;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cromo-pcac__nombre-jugador {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cromo-pcac__nombre-jugador--oculto {
+  color: rgba(255,255,255,0.3);
+  font-style: italic;
+}
+
+.cromo-pcac__posicion {
+  font-size: 0.55rem;
+  color: rgba(255,209,0,0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cromo-pcac--mini .cromo-pcac__nombre-jugador {
+  font-size: 0.58rem;
+}
+
+.cromo-pcac--mini .cromo-pcac__posicion {
+  font-size: 0.5rem;
+}

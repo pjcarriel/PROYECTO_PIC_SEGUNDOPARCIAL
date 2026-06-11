@@ -1,0 +1,190 @@
+.modal-pcac__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: overlayFadeIn 0.2s ease;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-pcac__caja {
+  background: linear-gradient(135deg, #0f1e35, #1a2f4e);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  width: min(480px, 95vw);
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: cajaEntrada 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes cajaEntrada {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.modal-pcac__icono {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 20px rgba(255,209,0,0.5));
+}
+
+.modal-pcac__titulo {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 0.75rem;
+}
+
+.modal-pcac__texto {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.8rem;
+}
+
+.modal-pcac__hint {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+}
+
+.modal-pcac__hint strong {
+  color: #FFD100;
+}
+
+.modal-pcac__botones {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.modal-pcac__btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  min-width: 130px;
+}
+
+.modal-pcac__btn--cancelar {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+}
+
+.modal-pcac__btn--cancelar:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.modal-pcac__btn--comprar {
+  background: linear-gradient(135deg, #FFD100, #f5a623);
+  color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(255,209,0,0.4);
+}
+
+.modal-pcac__btn--comprar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(255,209,0,0.55);
+}
+
+/* Animación apertura sobre */
+.modal-pcac__abriendo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 0;
+}
+
+.modal-pcac__abriendo p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+}
+
+.modal-pcac__sobre-anim {
+  font-size: 5rem;
+  animation: sobreAbrir 1.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px rgba(255,209,0,0.7));
+}
+
+@keyframes sobreAbrir {
+  0%   { transform: scale(1) rotate(0deg); }
+  25%  { transform: scale(1.2) rotate(-8deg); }
+  50%  { transform: scale(0.9) rotate(8deg); }
+  75%  { transform: scale(1.15) rotate(-4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Cromos obtenidos */
+.modal-pcac__cromos-obtenidos {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.modal-pcac__cromo-item {
+  width: 110px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255,209,0,0.5);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  animation: cromoAparecer 0.5s ease-out both;
+}
+
+.modal-pcac__cromo-item:nth-child(1) { animation-delay: 0.1s; }
+.modal-pcac__cromo-item:nth-child(2) { animation-delay: 0.25s; }
+.modal-pcac__cromo-item:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes cromoAparecer {
+  from { transform: translateY(20px) scale(0.8); opacity: 0; }
+  to   { transform: translateY(0) scale(1);      opacity: 1; }
+}
+
+.modal-pcac__cromo-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-pcac__cromo-info {
+  background: rgba(0,0,0,0.85);
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modal-pcac__cromo-num {
+  font-size: 0.6rem;
+  color: #FFD100;
+  font-weight: 700;
+}
+
+.modal-pcac__cromo-nombre {
+  font-size: 0.68rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.modal-pcac__cromo-pos {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
