@@ -63,7 +63,7 @@ export default function LoginPCAC() {
 
         <div className="login-pcac__hint">
           <p>Usuarios de prueba:</p>
-          <code>pamela / 1234 &nbsp;·&nbsp; carlos / 5678 &nbsp;·&nbsp; demo / 0000</code>
+          <code>Pamela / 1234 &nbsp;·&nbsp; Alisson / 1234 &nbsp;·&nbsp; demo / 0000</code>
         </div>
       </div>
     </div>
