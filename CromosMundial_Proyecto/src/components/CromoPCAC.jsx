@@ -1,13 +1,20 @@
 import { useAlbumPCAC } from '../context/AlbumContextPCAC'
 import './CromoPCAC.css'
 
-export default function CromoPCAC({ cromo, mini = false }) {
+export default function CromoPCAC({ cromo, mini = false, onVerDetalle }) {
   const { tieneCromo, cantidadCromo } = useAlbumPCAC()
   const cantidad = cantidadCromo(cromo.id)
   const pegado = cantidad > 0
 
+  const handleClick = () => {
+    if (pegado && onVerDetalle) onVerDetalle(cromo)
+  }
+
   return (
-    <div className={`cromo-pcac ${pegado ? 'cromo-pcac--pegado' : 'cromo-pcac--vacio'} ${mini ? 'cromo-pcac--mini' : ''}`}>
+    <div
+      className={`cromo-pcac ${pegado ? 'cromo-pcac--pegado' : 'cromo-pcac--vacio'} ${mini ? 'cromo-pcac--mini' : ''} ${pegado && onVerDetalle ? 'cromo-pcac--clickable' : ''}`}
+      onClick={handleClick}
+    >
       <div className="cromo-pcac__numero">#{cromo.numero}</div>
 
       <div className="cromo-pcac__imagen-wrap">

@@ -20,6 +20,10 @@
   animation: cromoPegar 0.4s ease-out;
 }
 
+.cromo-pcac--clickable {
+  cursor: pointer;
+}
+
 .cromo-pcac--pegado:hover {
   transform: translateY(-6px) scale(1.04);
   box-shadow: 0 0 0 2px #FFD100, 0 16px 36px rgba(0,0,0,0.6);

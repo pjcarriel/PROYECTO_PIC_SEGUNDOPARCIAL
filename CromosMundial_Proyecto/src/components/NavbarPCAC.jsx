@@ -2,7 +2,7 @@ import { useAuthPCAC } from '../context/AuthContextPCAC'
 import { useAlbumPCAC } from '../context/AlbumContextPCAC'
 import './NavbarPCAC.css'
 
-export default function NavbarPCAC({ onAbrirCarrito }) {
+export default function NavbarPCAC({ onAbrirCarrito, pagina, onNavegar }) {
   const { usuario, logout } = useAuthPCAC()
   const { getProgreso } = useAlbumPCAC()
   const { pegados, total, porcentaje } = getProgreso()
@@ -15,6 +15,21 @@ export default function NavbarPCAC({ onAbrirCarrito }) {
           <span className="navbar-pcac__nombre-app">Álbum Mundial</span>
           <span className="navbar-pcac__grupo">PCAC Edition</span>
         </div>
+      </div>
+
+      <div className="navbar-pcac__menu">
+        <button
+          className={`navbar-pcac__menu-item${pagina === 'inicio' ? ' navbar-pcac__menu-item--activo' : ''}`}
+          onClick={() => onNavegar('inicio')}
+        >
+          🏠 Inicio
+        </button>
+        <button
+          className={`navbar-pcac__menu-item${pagina === 'acerca-de' ? ' navbar-pcac__menu-item--activo' : ''}`}
+          onClick={() => onNavegar('acerca-de')}
+        >
+          👥 Acerca de
+        </button>
       </div>
 
       <div className="navbar-pcac__progreso">

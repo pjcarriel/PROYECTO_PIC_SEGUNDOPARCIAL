@@ -13,7 +13,7 @@ export function AuthProviderPCAC({ children }) {
 
   function login(username, password) {
     const encontrado = USUARIOS_PCAC.find(
-      u => u.username === username.trim().toLowerCase() && u.password === password
+      u => u.username.toLowerCase() === username.trim().toLowerCase() && u.password === password
     )
     if (encontrado) {
       const sesion = { username: encontrado.username, nombre: encontrado.nombre }

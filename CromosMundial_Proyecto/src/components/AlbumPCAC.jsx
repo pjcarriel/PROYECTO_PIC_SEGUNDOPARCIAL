@@ -4,42 +4,66 @@ import NavbarPCAC from './NavbarPCAC'
 import PaisPCAC from './PaisPCAC'
 import RepetidosPCAC from './RepetidosPCAC'
 import ModalCompraPCAC from './ModalCompraPCAC'
+import AcercaDePCAC from './AcercaDePCAC'
+import ModalDetalleCromoPCAC from './ModalDetalleCromoPCAC'
 import './AlbumPCAC.css'
 
 export default function AlbumPCAC() {
   const [modalAbierto, setModalAbierto] = useState(false)
+  const [pagina, setPagina] = useState('inicio')
+  const [cromoDetalle, setCromoDetalle] = useState(null)
 
   return (
     <div className="album-pcac">
-      <NavbarPCAC onAbrirCarrito={() => setModalAbierto(true)} />
+      <NavbarPCAC
+        onAbrirCarrito={() => setModalAbierto(true)}
+        pagina={pagina}
+        onNavegar={setPagina}
+      />
 
-      <main className="album-pcac__main">
-        <div className="album-pcac__portada">
-          <h1 className="album-pcac__portada-titulo">
-            <span className="album-pcac__portada-emoji">⚽</span>
-            Álbum del Mundial
-          </h1>
-          <p className="album-pcac__portada-sub">PCAC World Cup Sticker Collection</p>
-          <div className="album-pcac__paises-banderas">
-            {Object.values(PAISES_PCAC).map(p => (
-              <span key={p.id} className="album-pcac__flag-badge" title={p.nombre}>
-                {p.bandera} {p.nombre}
-              </span>
-            ))}
+      {pagina === 'acerca-de' ? (
+        <AcercaDePCAC />
+      ) : (
+        <main className="album-pcac__main">
+          <div className="album-pcac__portada">
+            <h1 className="album-pcac__portada-titulo">
+              <span className="album-pcac__portada-emoji">⚽</span>
+              Álbum del Mundial
+            </h1>
+            <p className="album-pcac__portada-sub">PCAC World Cup Sticker Collection</p>
+            <div className="album-pcac__paises-banderas">
+              {Object.values(PAISES_PCAC).map(p => (
+                <span key={p.id} className="album-pcac__flag-badge" title={p.nombre}>
+                  {p.bandera} {p.nombre}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="album-pcac__secciones">
-          {Object.values(PAISES_PCAC).map(pais => (
-            <PaisPCAC key={pais.id} pais={pais} />
-          ))}
+          <div className="album-pcac__secciones">
+            {Object.values(PAISES_PCAC).map(pais => (
+              <PaisPCAC
+                key={pais.id}
+                pais={pais}
+                onVerDetalle={(cromo, p) => setCromoDetalle({ cromo, pais: p })}
+              />
+            ))}
 
-          <RepetidosPCAC />
-        </div>
-      </main>
+            <RepetidosPCAC />
+          </div>
+        </main>
+      )}
 
       {modalAbierto && (
         <ModalCompraPCAC onCerrar={() => setModalAbierto(false)} />
+      )}
+
+      {cromoDetalle && (
+        <ModalDetalleCromoPCAC
+          cromo={cromoDetalle.cromo}
+          pais={cromoDetalle.pais}
+          onCerrar={() => setCromoDetalle(null)}
+        />
       )}
     </div>
   )
