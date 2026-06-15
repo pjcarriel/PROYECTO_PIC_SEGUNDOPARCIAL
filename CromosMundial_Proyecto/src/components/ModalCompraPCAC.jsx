@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import { useAlbumPCAC } from '../context/AlbumContextPCAC'
 import './ModalCompraPCAC.css'
 
-export default function ModalCompraPCAC({ onCerrar }) {
-  const { comprarSobre } = useAlbumPCAC()
+export default function ModalCompraPCAC({ comprarSobre, onCerrar }) {
   const [fase, setFase] = useState('confirmar') // 'confirmar' | 'abriendo' | 'resultado'
   const [cromosObtenidos, setCromosObtenidos] = useState([])
 

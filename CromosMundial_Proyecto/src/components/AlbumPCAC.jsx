@@ -8,14 +8,20 @@ import AcercaDePCAC from './AcercaDePCAC'
 import ModalDetalleCromoPCAC from './ModalDetalleCromoPCAC'
 import './AlbumPCAC.css'
 
-export default function AlbumPCAC() {
+export default function AlbumPCAC({ usuario, onLogout, tieneCromo, cantidadCromo, getCromosRepetidos, getProgreso, comprarSobre }) {
   const [modalAbierto, setModalAbierto] = useState(false)
   const [pagina, setPagina] = useState('inicio')
   const [cromoDetalle, setCromoDetalle] = useState(null)
 
+  const repetidos = getCromosRepetidos()
+  const progreso = getProgreso()
+
   return (
     <div className="album-pcac">
       <NavbarPCAC
+        usuario={usuario}
+        onLogout={onLogout}
+        progreso={progreso}
         onAbrirCarrito={() => setModalAbierto(true)}
         pagina={pagina}
         onNavegar={setPagina}
@@ -45,17 +51,22 @@ export default function AlbumPCAC() {
               <PaisPCAC
                 key={pais.id}
                 pais={pais}
+                tieneCromo={tieneCromo}
+                cantidadCromo={cantidadCromo}
                 onVerDetalle={(cromo, p) => setCromoDetalle({ cromo, pais: p })}
               />
             ))}
 
-            <RepetidosPCAC />
+            <RepetidosPCAC repetidos={repetidos} />
           </div>
         </main>
       )}
 
       {modalAbierto && (
-        <ModalCompraPCAC onCerrar={() => setModalAbierto(false)} />
+        <ModalCompraPCAC
+          comprarSobre={comprarSobre}
+          onCerrar={() => setModalAbierto(false)}
+        />
       )}
 
       {cromoDetalle && (

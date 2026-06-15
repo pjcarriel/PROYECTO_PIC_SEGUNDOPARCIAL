@@ -1,9 +1,7 @@
-import { useAlbumPCAC } from '../context/AlbumContextPCAC'
 import CromoPCAC from './CromoPCAC'
 import './PaisPCAC.css'
 
-export default function PaisPCAC({ pais, onVerDetalle }) {
-  const { tieneCromo } = useAlbumPCAC()
+export default function PaisPCAC({ pais, tieneCromo, cantidadCromo, onVerDetalle }) {
   const pegados = pais.cromos.filter(c => tieneCromo(c.id)).length
   const total = pais.cromos.length
 
@@ -33,6 +31,8 @@ export default function PaisPCAC({ pais, onVerDetalle }) {
             <CromoPCAC
               key={cromo.id}
               cromo={cromo}
+              pegado={tieneCromo(cromo.id)}
+              cantidad={cantidadCromo(cromo.id)}
               onVerDetalle={onVerDetalle ? (c) => onVerDetalle(c, pais) : undefined}
             />
           ))}

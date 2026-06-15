@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import { useAuthPCAC } from '../context/AuthContextPCAC'
 import './LoginPCAC.css'
 
-export default function LoginPCAC() {
-  const { login } = useAuthPCAC()
+export default function LoginPCAC({ onLogin }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -14,7 +12,7 @@ export default function LoginPCAC() {
     setError('')
     setLoading(true)
     setTimeout(() => {
-      const ok = login(username, password)
+      const ok = onLogin(username, password)
       if (!ok) setError('Usuario o contraseña incorrectos')
       setLoading(false)
     }, 600)

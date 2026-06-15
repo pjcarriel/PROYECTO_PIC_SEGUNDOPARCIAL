@@ -1,10 +1,6 @@
-import { useAlbumPCAC } from '../context/AlbumContextPCAC'
 import './RepetidosPCAC.css'
 
-export default function RepetidosPCAC() {
-  const { getCromosRepetidos } = useAlbumPCAC()
-  const repetidos = getCromosRepetidos()
-
+export default function RepetidosPCAC({ repetidos }) {
   if (repetidos.length === 0) return null
 
   return (

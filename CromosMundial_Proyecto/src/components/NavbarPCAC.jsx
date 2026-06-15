@@ -1,11 +1,7 @@
-import { useAuthPCAC } from '../context/AuthContextPCAC'
-import { useAlbumPCAC } from '../context/AlbumContextPCAC'
 import './NavbarPCAC.css'
 
-export default function NavbarPCAC({ onAbrirCarrito, pagina, onNavegar }) {
-  const { usuario, logout } = useAuthPCAC()
-  const { getProgreso } = useAlbumPCAC()
-  const { pegados, total, porcentaje } = getProgreso()
+export default function NavbarPCAC({ usuario, onLogout, progreso, onAbrirCarrito, pagina, onNavegar }) {
+  const { pegados, total, porcentaje } = progreso
 
   return (
     <nav className="navbar-pcac">
@@ -51,7 +47,7 @@ export default function NavbarPCAC({ onAbrirCarrito, pagina, onNavegar }) {
           <span className="navbar-pcac__nombre">{usuario?.nombre}</span>
         </div>
 
-        <button className="navbar-pcac__btn-logout" onClick={logout} title="Cerrar sesión">
+        <button className="navbar-pcac__btn-logout" onClick={onLogout} title="Cerrar sesión">
           ⏻
         </button>
       </div>
