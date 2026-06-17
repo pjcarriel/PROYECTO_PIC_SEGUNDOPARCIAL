@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './AcercaDePCAC.css'
+import '../styles/AcercaDePCAC.css'
 
 const INTEGRANTES = [
   {

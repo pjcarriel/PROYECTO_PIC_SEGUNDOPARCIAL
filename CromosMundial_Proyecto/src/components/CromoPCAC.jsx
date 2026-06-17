@@ -1,4 +1,4 @@
-import './CromoPCAC.css'
+﻿import '../styles/CromoPCAC.css'
 
 export default function CromoPCAC({ cromo, mini = false, pegado, cantidad, onVerDetalle }) {
   function handleClick() {

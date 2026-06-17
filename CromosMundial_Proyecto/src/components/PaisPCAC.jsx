@@ -1,5 +1,5 @@
 import CromoPCAC from './CromoPCAC'
-import './PaisPCAC.css'
+import '../styles/PaisPCAC.css'
 
 export default function PaisPCAC({ pais, tieneCromo, cantidadCromo, onVerDetalle }) {
   const pegados = pais.cromos.filter(c => tieneCromo(c.id)).length

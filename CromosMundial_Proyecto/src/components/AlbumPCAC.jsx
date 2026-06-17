@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { PAISES_PCAC } from '../data/cromosPCAC'
 import NavbarPCAC from './NavbarPCAC'
 import PaisPCAC from './PaisPCAC'
@@ -6,7 +6,7 @@ import RepetidosPCAC from './RepetidosPCAC'
 import ModalCompraPCAC from './ModalCompraPCAC'
 import AcercaDePCAC from './AcercaDePCAC'
 import ModalDetalleCromoPCAC from './ModalDetalleCromoPCAC'
-import './AlbumPCAC.css'
+import '../styles/AlbumPCAC.css'
 
 export default function AlbumPCAC({ usuario, onLogout, tieneCromo, cantidadCromo, getCromosRepetidos, getProgreso, comprarSobre }) {
   const [modalAbierto, setModalAbierto] = useState(false)
@@ -33,8 +33,8 @@ export default function AlbumPCAC({ usuario, onLogout, tieneCromo, cantidadCromo
         <main className="album-pcac__main">
           <div className="album-pcac__portada">
             <h1 className="album-pcac__portada-titulo">
-              <span className="album-pcac__portada-emoji">⚽</span>
-              Álbum del Mundial
+              <span className="album-pcac__portada-emoji">âš½</span>
+              Ãlbum del Mundial
             </h1>
             <p className="album-pcac__portada-sub">PCAC World Cup Sticker Collection</p>
             <div className="album-pcac__paises-banderas">

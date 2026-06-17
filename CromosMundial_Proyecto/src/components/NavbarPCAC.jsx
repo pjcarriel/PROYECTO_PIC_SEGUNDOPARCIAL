@@ -1,4 +1,4 @@
-import './NavbarPCAC.css'
+﻿import '../styles/NavbarPCAC.css'
 
 export default function NavbarPCAC({ usuario, onLogout, progreso, onAbrirCarrito, pagina, onNavegar }) {
   const { pegados, total, porcentaje } = progreso
@@ -6,9 +6,9 @@ export default function NavbarPCAC({ usuario, onLogout, progreso, onAbrirCarrito
   return (
     <nav className="navbar-pcac">
       <div className="navbar-pcac__logo">
-        <span className="navbar-pcac__trofeo">🏆</span>
+        <span className="navbar-pcac__trofeo">ðŸ†</span>
         <div>
-          <span className="navbar-pcac__nombre-app">Álbum Mundial</span>
+          <span className="navbar-pcac__nombre-app">Ãlbum Mundial</span>
           <span className="navbar-pcac__grupo">PCAC Edition</span>
         </div>
       </div>
@@ -18,13 +18,13 @@ export default function NavbarPCAC({ usuario, onLogout, progreso, onAbrirCarrito
           className={`navbar-pcac__menu-item${pagina === 'inicio' ? ' navbar-pcac__menu-item--activo' : ''}`}
           onClick={() => onNavegar('inicio')}
         >
-          🏠 Inicio
+          ðŸ  Inicio
         </button>
         <button
           className={`navbar-pcac__menu-item${pagina === 'acerca-de' ? ' navbar-pcac__menu-item--activo' : ''}`}
           onClick={() => onNavegar('acerca-de')}
         >
-          👥 Acerca de
+          ðŸ‘¥ Acerca de
         </button>
       </div>
 
@@ -38,7 +38,7 @@ export default function NavbarPCAC({ usuario, onLogout, progreso, onAbrirCarrito
 
       <div className="navbar-pcac__acciones">
         <button className="navbar-pcac__btn-carrito" onClick={onAbrirCarrito} title="Comprar sobre de cromos">
-          <span className="navbar-pcac__carrito-icono">📦</span>
+          <span className="navbar-pcac__carrito-icono">ðŸ“¦</span>
           <span>Comprar Sobre</span>
         </button>
 
@@ -47,8 +47,8 @@ export default function NavbarPCAC({ usuario, onLogout, progreso, onAbrirCarrito
           <span className="navbar-pcac__nombre">{usuario?.nombre}</span>
         </div>
 
-        <button className="navbar-pcac__btn-logout" onClick={onLogout} title="Cerrar sesión">
-          ⏻
+        <button className="navbar-pcac__btn-logout" onClick={onLogout} title="Cerrar sesiÃ³n">
+          â»
         </button>
       </div>
     </nav>

@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import './ModalDetalleCromoPCAC.css'
+import '../styles/ModalDetalleCromoPCAC.css'
 
 const POSICION_ICONO = {
   'Portero':         '🧤',

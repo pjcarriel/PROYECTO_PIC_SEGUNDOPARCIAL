@@ -1,4 +1,4 @@
-import './RepetidosPCAC.css'
+import '../styles/RepetidosPCAC.css'
 
 export default function RepetidosPCAC({ repetidos }) {
   if (repetidos.length === 0) return null

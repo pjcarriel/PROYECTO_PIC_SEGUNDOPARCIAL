@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './ModalCompraPCAC.css'
+import '../styles/ModalCompraPCAC.css'
 
 export default function ModalCompraPCAC({ comprarSobre, onCerrar }) {
   const [fase, setFase] = useState('confirmar') // 'confirmar' | 'abriendo' | 'resultado'
